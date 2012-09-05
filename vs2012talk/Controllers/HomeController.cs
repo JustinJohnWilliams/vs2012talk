@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using vs2012talk.Models;
 
 namespace vs2012talk.Controllers
 {
@@ -20,12 +19,5 @@ namespace vs2012talk.Controllers
         {
             return PartialView("_modal");
         }
-
-        [HttpPost]
-        public ActionResult Create(IndexViewModel model)
-        {
-            return View();
-        }
-
     }
 }

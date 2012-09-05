@@ -1,5 +1,6 @@
-﻿var magicNameSpace = {
+﻿
 
+var magicNameSpace = {
     doStuff: function (x, y) {
         /// <param name="x" type="int">magic number</param>
         /// <param name="y" type="string">magic string</param>
@@ -9,5 +10,4 @@
 
         alert(b + ' and your number was: ' + a);
     }
-
 }
