@@ -1,0 +1,58 @@
+﻿@model vs2012talk.Models.IndexViewModel
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<ul class="nav nav-tabs" id="myTabs">
+    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+    <li><a href="#js" data-toggle="tab">Js</a></li>
+    <li><a href="#modal" data-toggle="tab">Modal</a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="home">
+        @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            <legend>Foo Form</legend>
+            <div class="control-group">
+                <label class="control-label" for="Color">Color: </label>
+                <div class="controls">
+                    <input id="Color" type="color" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="Email">Email: </label>
+                <div class="controls">
+                    <input id="Email" type="email" placeholder="email@domain.com" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="Age">Age: </label>
+                <div class="controls">
+                    <input id="Age" type="number" min="18" max="100" value="18" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="DateTime">Date Time: </label>
+                <div class="controls">
+                    <input id="DateTime" type="datetime"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="Rating">Rating: </label>
+                <div class="controls">
+                    <input id="Rating" type="range" min="1" max="10" />
+                    <br />
+                    <br />
+                    <input type="submit" value="submit" class="btn btn-success" />
+                </div>
+            </div>
+        }
+    </div>
+    <div class="tab-pane" id="js">
+        @{Html.RenderPartial("_jsPartial"); }
+    </div>
+    <div class="tab-pane" id="modal">
+        @{Html.RenderPartial("_modalPartial"); }
+    </div>
+</div>

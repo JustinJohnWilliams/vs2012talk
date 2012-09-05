@@ -1,0 +1,23 @@
+﻿@Ajax.ActionLink("Show Modal", "Modal", "Home", null, 
+        new AjaxOptions 
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "Get",
+            UpdateTargetId = "divModal",
+            OnSuccess = "showModal"
+        }, null)
+
+<div id="divModal" class="modal" style="display: none;">
+</div>
+
+<script type="text/javascript">
+    $.ajaxSetup({ cache: false });
+
+    function showModal() {
+        $('#divModal').modal(
+            {
+                show: true,
+                backdrop: 'static'
+            });
+    }
+</script>
